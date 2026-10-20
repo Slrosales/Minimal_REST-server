@@ -1,0 +1,23 @@
+{
+  "name": "rest_server",
+  "version": "1.0.0",
+  "description": "**Authors** *   Laura Sofía Gómez Rosales  [![GitHub Slrosales](https://img.shields.io/badge/by-Slrosales-purple)](https://github.com/Slrosales) *   Maria Camila Pinzon Niño [![GitHub mcnino15](https://img.shields.io/badge/by-mcnino15-red)](https://github.com/mcnino15)",
+  "homepage": "https://github.com/Slrosales/REST_Server#readme",
+  "bugs": {
+    "url": "https://github.com/Slrosales/REST_Server/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Slrosales/REST_Server.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.3.0"
+  }
+}
