@@ -1,9 +1,9 @@
-import fs from 'node:fs';
+import { loadData } from '../data.js';
 
 const MainController = {
   getMain(req, res) {
     try {
-      const data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
+      const data = loadData();
 
       const head = data.responsibles.map((number) => {
         const prof = data.profs.find((p) => p.number === number);
