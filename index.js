@@ -7,6 +7,32 @@ function sendJson(res, status, body) {
   res.end(JSON.stringify(body));
 }
 
+function collectBody(req, callback) {
+  const chunks = [];
+
+  req.on('data', (chunk) => {
+    chunks.push(chunk);
+  });
+
+  req.on('end', () => {
+    const raw = Buffer.concat(chunks).toString('utf8');
+
+    if (raw === '') {
+      return callback(null, undefined);
+    }
+
+    try {
+      callback(null, JSON.parse(raw));
+    } catch (err) {
+      callback(err);
+    }
+  });
+
+  req.on('error', (err) => {
+    callback(err);
+  });
+}
+
 function getMain(req, res) {
   sendJson(res, 200, {
     name: "Master 2 Mosig",
@@ -54,6 +80,22 @@ function getModule(req, res) {
   sendJson(res, 200, { code: req.params.code_module });
 }
 
+function createStudent(req, res) {
+  if (!req.body || typeof req.body !== 'object' || !req.body.ine) {
+    return sendJson(res, 400, { error: 'ine is required' });
+  }
+
+  sendJson(res, 201, req.body);
+}
+
+function updateStudent(req, res) {
+  if (!req.body || typeof req.body !== 'object') {
+    return sendJson(res, 400, { error: 'a JSON body is required' });
+  }
+
+  sendJson(res, 200, { ...req.body, ine: req.params.ine });
+}
+
 
 const router = {
   routes: [], // Array to store registered routes
@@ -69,6 +111,10 @@ const router = {
 
   post(path, handler) {
     this.add( "POST", path, handler );
+  },
+
+  put(path, handler) {
+    this.add( "PUT", path, handler );
   },
 
   dispatch(req, res) {
@@ -102,9 +148,20 @@ router.get('/profs/:number', getProf);
 router.get('/modules', getModules);
 router.get('/modules/:code_module', getModule);
 
+router.post('/students', createStudent);
+router.put('/students/:ine', updateStudent);
+
 
 const server = http.createServer((req, res) => {
-    router.dispatch(req, res); // Dispatch the request to the router
+    collectBody(req, (err, body) => {
+        if (err) {
+            console.error(err);
+            return sendJson(res, 400, { error: 'Invalid JSON payload' });
+        }
+
+        req.body = body;
+        router.dispatch(req, res);
+    });
 });
 
 server.listen(port, () => {
