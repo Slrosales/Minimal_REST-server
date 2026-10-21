@@ -1,5 +1,5 @@
 {
-  "name": "rest_server",
+  "name": "mosig-server",
   "version": "1.0.0",
   "description": "**Authors** *   Laura Sofía Gómez Rosales  [![GitHub Slrosales](https://img.shields.io/badge/by-Slrosales-purple)](https://github.com/Slrosales) *   Maria Camila Pinzon Niño [![GitHub mcnino15](https://img.shields.io/badge/by-mcnino15-red)](https://github.com/mcnino15)",
   "homepage": "https://github.com/Slrosales/REST_Server#readme",
@@ -15,10 +15,13 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
+    "start:express": "node express/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "body-parser": "^2.3.0",
-    "express": "^5.3.0"
+    "express": "^5.3.0",
+    "tiny-router": "file:packages/tiny-router"
   }
 }

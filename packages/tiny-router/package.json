@@ -1,0 +1,12 @@
+{
+  "name": "tiny-router",
+  "version": "0.1.0",
+  "description": "A minimal HTTP router and server for Node.js",
+  "type": "module",
+  "main": "./src/index.js",
+  "exports": "./src/index.js",
+  "files": [
+    "src"
+  ],
+  "license": "ISC"
+}
