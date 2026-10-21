@@ -68,8 +68,8 @@ ES Modules are enabled by `"type": "module"` in `package.json`, so the project u
 ## Installation
 
 ```sh
-git clone https://github.com/Slrosales/REST_Server.git
-cd REST_Server
+git clone https://github.com/Slrosales/Minimal_REST-server.git
+cd Minimal_REST-server
 npm install
 ```
 
@@ -215,7 +215,7 @@ Example `GET /` response:
 ## Repository structure
 
 ```text
-REST_Server/
+Minimal_REST-server/
 ├── index.js                     # native app: route table + start (8080)
 ├── data.js                      # loadData / saveData for the app
 ├── data.json                    # the Mosig dataset (shared by both apps)

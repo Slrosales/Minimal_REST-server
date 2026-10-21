@@ -2,13 +2,13 @@
   "name": "mosig-server",
   "version": "1.0.0",
   "description": "**Authors** *   Laura Sofía Gómez Rosales  [![GitHub Slrosales](https://img.shields.io/badge/by-Slrosales-purple)](https://github.com/Slrosales) *   Maria Camila Pinzon Niño [![GitHub mcnino15](https://img.shields.io/badge/by-mcnino15-red)](https://github.com/mcnino15)",
-  "homepage": "https://github.com/Slrosales/REST_Server#readme",
+  "homepage": "https://github.com/Slrosales/Minimal_REST-server#readme",
   "bugs": {
-    "url": "https://github.com/Slrosales/REST_Server/issues"
+    "url": "https://github.com/Slrosales/Minimal_REST-server/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Slrosales/REST_Server.git"
+    "url": "git+https://github.com/Slrosales/Minimal_REST-server.git"
   },
   "license": "ISC",
   "author": "",
