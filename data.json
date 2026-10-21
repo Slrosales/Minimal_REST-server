@@ -1744,6 +1744,11 @@
       ],
       "birthdate": "2002-03-21",
       "ine": "154954583F"
+    },
+    {
+      "ine": "123",
+      "firstname": "Laura",
+      "lastname": "Gomez"
     }
   ],
   "profs": [
@@ -2130,6 +2135,11 @@
       "number": "346070450",
       "office": "DG-296",
       "cstudentsategory": "prof"
+    },
+    {
+      "number": "123",
+      "firstname": "Camila",
+      "lastname": "Pinzon"
     }
   ],
   "modules": [
